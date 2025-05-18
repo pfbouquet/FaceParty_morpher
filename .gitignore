@@ -1,5 +1,3 @@
-!*/.gitkeep 
-
 # python and dev env files
 .python-version
 .vscode/
@@ -7,3 +5,4 @@ __pycache__/
 
 # tmp folder
 app/tmp/*
+!app/tmp/.gitkeep 
