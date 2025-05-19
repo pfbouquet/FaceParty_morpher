@@ -1,4 +1,5 @@
 import facemorpher
+import cv2
 
 WIDTH, HEIGHT = 1024, 1024
 

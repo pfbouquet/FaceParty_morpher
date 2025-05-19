@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-# from app.routers import morph
+from app.routers import morph
 
 app = FastAPI(
     title="FacePartyMorpher",
@@ -16,4 +16,4 @@ app = FastAPI(
     ]
 )
 
-# app.include_router(morph.router)
+app.include_router(morph.router)
