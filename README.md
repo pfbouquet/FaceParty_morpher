@@ -1,8 +1,8 @@
 # Objectves
 
 - [x] Install facemorpher
-- [] Run a local morph
-- [] Expose morphing through a route call on local images
+- [x] Run a local morph
+- [x] Expose morphing through a route call on local images
   - [] Dockerise
 - [] Publish images on a CDN (Content Delivery Network)
   - [] Dockerise
