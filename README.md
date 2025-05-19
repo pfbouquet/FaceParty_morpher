@@ -13,6 +13,9 @@
 
 # Routes:
 
+- POST http://127.0.0.1:8000/morph provided with {image1_path, image2_path, output_path}
+  Morph 2 images and place result in output_path
+
 Automatic API documentation
 
 - http://127.0.0.1:8000/docs → Swagger UI automatique !
@@ -38,7 +41,7 @@ Prepare pip and wheel
 Install requirements from requirements.txt
 `pip install -r requirements.txt`
 
-## (local) fun command line
+## (local) run command line
 
 - Running the server:
   `uvicorn app.main:app`
