@@ -3,6 +3,9 @@
 .vscode/
 __pycache__/
 
+# Environement variable .env file
+.env
+
 # tmp folder
 app/tmp/*
 !app/tmp/.gitkeep 

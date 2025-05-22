@@ -5,17 +5,22 @@
 - [x] Expose morphing through a route call on local images
   - [x] Dockerise
   - [x] Dockerise multiplatform ready (arm64 & amd64)
-- [ ] Publish images on a CDN (Content Delivery Network)
+  - [x] Test deployment on NorthFlank with Dockerfile
+- [x] Publish images on a CDN (Content Delivery Network)
   - [ ] Dockerise
-- [ ] Make it possible to send images along the route
+- [x] Make it possible to send images along the route
   - [ ] Dockerise
 - [ ] Make it async ready, callback to client when morph is ready
   - [ ] Dockerise
 
 # Routes:
 
-- POST http://127.0.0.1:8000/morph provided with {image1_path, image2_path, output_path}
-  Morph 2 images and place result in output_path
+- POST http://127.0.0.1:8000/morph provided with {image1, image2}
+  Morph 2 images and host reulst in cloudinary
+  Returns: {result: Boolean, morph_url: "", morph_local_path: ""}
+- POST http://127.0.0.1:8000/morph/test
+  Morph 2 test images available in the test folder and return the result in tmp folder
+  Returns: {result: Boolean, output_path: "app/tmp/test_result.png"}
 
 Automatic API documentation
 

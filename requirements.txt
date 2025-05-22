@@ -3,3 +3,6 @@ pydantic
 uvicorn
 opencv-python-headless
 facemorpher
+python-multipart
+cloudinary
+python-dotenv
