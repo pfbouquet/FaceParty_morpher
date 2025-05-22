@@ -26,7 +26,6 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 COPY requirements.txt .
-#COPY requirements.txt ./
 
 # Installer OpenCV Python en premier (évite certains conflits ABI)
 RUN pip install --no-cache-dir opencv-python-headless
@@ -35,7 +34,6 @@ RUN pip install --no-cache-dir opencv-python-headless
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app ./app
-#COPY app/ ./app
 
 # Exposer le port
 EXPOSE 8000

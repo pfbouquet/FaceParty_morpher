@@ -7,9 +7,9 @@
   - [x] Dockerise multiplatform ready (arm64 & amd64)
   - [x] Test deployment on NorthFlank with Dockerfile
 - [x] Publish images on a CDN (Content Delivery Network)
-  - [ ] Dockerise
+  - [x] Dockerise
 - [x] Make it possible to send images along the route
-  - [ ] Dockerise
+  - [x] Dockerise
 - [ ] Make it async ready, callback to client when morph is ready
   - [ ] Dockerise
 
@@ -60,10 +60,10 @@ Install requirements from requirements.txt
 Local image (usefull for mac). Takes ~4minutes to build
 
 - Build `docker build --platform linux/arm64 -t facemorpher-api:local .`
-- Run `docker run -p 8000:8000 facemorpher-api:local`
+- Run `docker run -p 8000:8000 --env-file .env facemorpher-api:local`
 
 Multi platform image (amd64 + arm64). Takes ~5minutes to build and push
 
 - Build and push: `docker buildx build --platform linux/amd64,linux/arm64 -t pfbqt/facemorpher-api:latest --push .`
 - Pull: `docker pull pfbqt/facemorpher-api:latest`
-- Run: `docker run -p 8000:8000 pfbqt/facemorpher-api:latest`
+- Run: `docker run -p 8000:8000 --env-file .env pfbqt/facemorpher-api:latest`
