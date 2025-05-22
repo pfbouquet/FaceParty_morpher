@@ -3,13 +3,14 @@
 - [x] Install facemorpher
 - [x] Run a local morph
 - [x] Expose morphing through a route call on local images
-  - [] Dockerise
-- [] Publish images on a CDN (Content Delivery Network)
-  - [] Dockerise
-- [] Make it possible to send images along the route
-  - [] Dockerise
-- [] Make it async ready, callback to client when morph is ready
-  - [] Dockerise
+  - [x] Dockerise
+  - [x] Dockerise multiplatform ready (arm64 & amd64)
+- [ ] Publish images on a CDN (Content Delivery Network)
+  - [ ] Dockerise
+- [ ] Make it possible to send images along the route
+  - [ ] Dockerise
+- [ ] Make it async ready, callback to client when morph is ready
+  - [ ] Dockerise
 
 # Routes:
 
@@ -48,3 +49,16 @@ Install requirements from requirements.txt
 - Running the server when developping:
   `uvicorn app.main:app --reload`
   (the --reload wil reload the server on file change)
+
+## Docker
+
+Local image (usefull for mac). Takes ~4minutes to build
+
+- Build `docker build --platform linux/arm64 -t facemorpher-api:local .`
+- Run `docker run -p 8000:8000 facemorpher-api:local`
+
+Multi platform image (amd64 + arm64). Takes ~5minutes to build and push
+
+- Build and push: `docker buildx build --platform linux/amd64,linux/arm64 -t pfbqt/facemorpher-api:latest --push .`
+- Pull: `docker pull pfbqt/facemorpher-api:latest`
+- Run: `docker run -p 8000:8000 pfbqt/facemorpher-api:latest`
